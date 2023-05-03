@@ -2,14 +2,14 @@
 <style>
 </style>
                 
-<script src="https://gmailcomflowlightningout-dev-ed.develop.my.salesforce-sites.com/Test123/lightning/lightning.out.js"></script>
+<script src="https://gmailcomflowlightningout-dev-ed.develop.my.site.com/AuraCommunityTest/s/lightning/lightning.out.js"></script>
 <div data-lightning-out="true"></div>
 
 <script>
 
     const appName = 'c:lightningOutApp';
     const componentName = 'c:LightningOutFlowLwc';
-    const lightningEndpoint = 'https://gmailcomflowlightningout-dev-ed.develop.my.salesforce-sites.com/Test123';
+    const lightningEndpoint = 'https://gmailcomflowlightningout-dev-ed.develop.my.site.com/AuraCommunityTest/s';
     const targetElement = document.querySelector("[data-lightning-out]");
     
     // read url paramater
@@ -17,7 +17,7 @@
     const urlParams = new URLSearchParams(queryString);
     const componentAttributes = {
         flowApiName: 'Lightning_Out_Test_Flow',
-        flowInputVariables: [{name: 'testInput', type: 'Number', value: urlParams.get('testInput')},{name: 'testInput2', type: 'String', value: 'asdf'}]
+        flowInputVariables: [{name: 'testInput', type: 'Number', value: urlParams.get('testInput')},{name: 'testInput2', type: 'String', value: urlParams.get('testInput2')}]
     };
 
     $Lightning.use(
