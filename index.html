@@ -1,54 +1,39 @@
 <html>
-<body>
-<style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: "Arial", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
-	}
+<style>
 </style>
+                
+<script src="https://gmailcomflowlightningout-dev-ed.develop.my.salesforce-sites.com/Test123/lightning/lightning.out.js"></script>
+<div data-lightning-out="true"></div>
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+<script>
 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+    const appName = 'c:lightningOutApp';
+    const componentName = 'c:LightningOutFlowLwc';
+    const lightningEndpoint = 'https://gmailcomflowlightningout-dev-ed.develop.my.salesforce-sites.com/Test123';
+    const targetElement = document.querySelector("[data-lightning-out]");
+    
+    // read url paramater
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const componentAttributes = {
+        flowApiName: 'Lightning_Out_Test_Flow',
+        flowInputVariables: [{name: 'testInput', type: 'Number', value: 123},{name: 'testInput2', type: 'String', value: 'abc'}]
+    };
 
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+    $Lightning.use(
+        appName,
+        function (){
+            $Lightning.createComponent(
+                componentName,
+                componentAttributes,
+                targetElement,
+                function (cmp){
+                    console.log('lightning component created');
+                }
+            );
+        },
+        lightningEndpoint
+    );
 
-		// Settings for Flows
-
-		embedded_svc.settings.enabledFeatures = ['Flows'];
-		embedded_svc.settings.entryFeature = 'Flows';
-
-		embedded_svc.init(
-			'https://gmailcomflowlightningout-dev-ed.develop.my.salesforce.com',
-			'https://gmailcomflowlightningout-dev-ed.develop.my.site.com/AuraCommunityTest',
-			gslbBaseURL,
-			'00D5i00000BXpLH',
-			'Test',
-			{
-				
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://gmailcomflowlightningout-dev-ed.develop.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
 </script>
-	</body>
 </html>
