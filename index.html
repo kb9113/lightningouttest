@@ -2,27 +2,26 @@
 <style>
 [data-lightning-out="true"]
 {
---lwc-colorTextLabel: #FF0000;
---lwc-formLabelFontSize: 40px;
+--lwc-colorTextLabel: #33FF00;
 }
 </style>
                 
-<script src="https://gmailcomflowlightningout-dev-ed.develop.my.salesforce-sites.com/Test123/lightning/lightning.out.js"></script>
+<script src="https://onboarder-dev-ed.my.site.com/2FA/lightning/lightning.out.js"></script>
 <div data-lightning-out="true"></div>
 
 <script>
 
     const appName = 'c:lightningOutApp';
     const componentName = 'c:LightningOutFlowLwc';
-    const lightningEndpoint = 'https://gmailcomflowlightningout-dev-ed.develop.my.salesforce-sites.com/Test123';
+    const lightningEndpoint = 'https://onboarder-dev-ed.my.site.com/2FA';
     const targetElement = document.querySelector("[data-lightning-out]");
     
     // read url paramater
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const componentAttributes = {
-        flowApiName: 'Lightning_Out_Test_Flow',
-        flowInputVariables: [{name: 'testInput', type: 'Number', value: 123},{name: 'testInput2', type: 'String', value: 'abc'}]
+        flowApiName: 'Community_Create_a_Case',
+        flowInputVariables: []
     };
 
     $Lightning.use(
